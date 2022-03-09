@@ -12,7 +12,7 @@ interface LinkButtonProps {
 export function LinkButton({ name, textColor, bgColor, bgColorHover, borderColor, href }: LinkButtonProps) {
   return (
     <Link 
-      maxWidth={165}
+      maxWidth={[145, 165]}
       w="100%"
       _hover={{}}
       href={href}
@@ -24,12 +24,12 @@ export function LinkButton({ name, textColor, bgColor, bgColorHover, borderColor
         textTransform="uppercase"
         bgColor={bgColor}
         color={textColor}
-        fontSize="sm"
+        fontSize={["xs", "sm"]}
         fontWeight="bold"
         lineHeight="5"
         h="42"
         py="5"
-        px="3"
+        px={["2", "3"]}
         borderRadius="4px"
         border={borderColor && `1px solid ${borderColor}`}
         _hover={{

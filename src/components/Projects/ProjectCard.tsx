@@ -17,14 +17,14 @@ export function ProjectCard({ name, description, html_url }: ProjectCardProps) {
       borderRadius="8px" 
       border="1px solid #873EEF" 
       bgColor="gray.800" 
-      p="6"
+      p={["4", "6"]}
     >
       <Flex align="center" h="13.875rem" borderRadius="4px" justify="center" bgColor="gray.900">
         <Image src={altImage} alt="Imagem alternativa" />
       </Flex>
       <Heading 
         my="6"
-        fontSize="2xl" 
+        fontSize={["xl", "2xl" ]}
         fontWeight="500"
         lineHeight="8"
       >
@@ -32,14 +32,14 @@ export function ProjectCard({ name, description, html_url }: ProjectCardProps) {
       </Heading>
       <Text
         my="6"
-        fontSize="lg"
+        fontSize={["md", "lg"]}
         fontWeight="500"
         color="gray.300" 
       >
         {description}
       </Text>
 
-      <HStack spacing="6" mt="12" align="center">
+      <HStack spacing={["4", "6"]} mt="12" align="center">
         <LinkButton
           name="demo"
           bgColor="green.400"

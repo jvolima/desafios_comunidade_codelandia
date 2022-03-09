@@ -35,7 +35,7 @@ export function Projects() {
   })
 
   return (
-    <SimpleGrid flex="1" maxWidth={1120} w="100%" mx="auto" px="4" gap="1.625rem" minChildWidth="500px">
+    <SimpleGrid flex="1" maxWidth={1120} w="100%" mx="auto" px="4" gap="1.625rem" minChildWidth={["300px", "500px"]}>
       { data && (
         data.map(data => (
           <ProjectCard name={data.name} description={data.description} html_url={data.html_url} />

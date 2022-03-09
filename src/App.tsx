@@ -1,4 +1,4 @@
-import { ChakraProvider, Heading, Text, Box, Flex, HStack } from "@chakra-ui/react"
+import { ChakraProvider, Heading, Text, Box, Flex, HStack, useBreakpointValue } from "@chakra-ui/react"
 import { QueryClient, QueryClientProvider } from "react-query"
 import { ReactQueryDevtools } from "react-query/devtools"
 import { Header } from "./components/Header"
@@ -8,6 +8,11 @@ import { theme } from "./styles/theme"
 const client = new QueryClient();
 
 function App() {
+  const isWideVersion = useBreakpointValue({
+    base: false,
+    md: true
+  })
+
   return (
     <QueryClientProvider client={client}>
       <ChakraProvider theme={theme}>
@@ -27,7 +32,7 @@ function App() {
             my="3"
             maxWidth={810}
             fontWeight="600"
-            fontSize="4rem"
+            fontSize={["3rem", "3.5rem", "3.75rem", "4rem"]}
             lineHeight="5.25rem"
           >
             Projetos da comunidade Codelândia
@@ -36,7 +41,7 @@ function App() {
             my="8"
             maxWidth={812}
             fontWeight="500"
-            fontSize="2xl"
+            fontSize={["md", "lg", "xl", "2xl"]}
             lineHeight="10"
             color="gray.300"
           >
@@ -50,8 +55,8 @@ function App() {
           maxWidth={1120} 
           w="100%" 
           mx="auto"
-          mt="36" 
-          mb="12"
+          mt={["14", "24", "36"]} 
+          mb={["7", "12"]}
           px="4"
           as="footer" 
           align="center" 
@@ -60,16 +65,16 @@ function App() {
           <Text
             fontFamily="Josefin Sans"
             fontWeight="bold"
-            fontSize="5xl"
+            fontSize={["3xl", "4xl", "5xl"]}
             lineHeight="3rem"
             color="purple.500"
           >
             {`{ )`}
           </Text>
-          <HStack spacing="12">
+          <HStack spacing={["6", "8", "12"]}>
             <Text
               fontFamily="IBM Plex Mono"
-              fontSize="lg"
+              fontSize={["sm", "md", "lg"]}
               lineHeight="7"
               color="gray.300"
             >
@@ -77,7 +82,7 @@ function App() {
             </Text>
             <Text
               fontFamily="IBM Plex Mono"
-              fontSize="lg"
+              fontSize={["sm", "md", "lg"]}
               lineHeight="7"
               color="gray.300"
             >
