@@ -1,14 +1,15 @@
-import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, HStack, Image, Link, Text } from "@chakra-ui/react";
 
 import altImage from "../../assets/altImage.svg"
+import { LinkButton } from "./LinkButton";
 
 interface ProjectCardProps {
   name: string;
   description: string;
-  url: string;
+  html_url: string;
 }
 
-export function ProjectCard({ name, description, url }: ProjectCardProps) {
+export function ProjectCard({ name, description, html_url }: ProjectCardProps) {
   return (
     <Box 
       h="31.25rem" 
@@ -37,6 +38,25 @@ export function ProjectCard({ name, description, url }: ProjectCardProps) {
       >
         {description}
       </Text>
+
+      <HStack spacing="6" mt="12" align="center">
+        <LinkButton
+          name="demo"
+          bgColor="green.400"
+          textColor="gray.900"
+          bgColorHover="gray.300"
+          href={"/"} 
+        />
+
+        <LinkButton
+          name="github"
+          bgColor="transparent"
+          textColor="white"
+          bgColorHover="purple.500" 
+          borderColor="#04D361"
+          href={html_url} 
+        />
+      </HStack>
     </Box>
   )
 }

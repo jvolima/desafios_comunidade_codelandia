@@ -6,7 +6,7 @@ import { ProjectCard } from "./ProjectCard";
 interface Repo {
   name: string;
   description: string;
-  url: string;
+  html_url: string;
 }
 
 export function Projects() {
@@ -19,7 +19,7 @@ export function Projects() {
       return {
         name: (repo.name.charAt(0).toUpperCase() + repo.name.replaceAll("_", " ").slice(1)),
         description: repo.description,
-        url: repo.url
+        html_url: repo.html_url
       }
     })
 
@@ -38,7 +38,7 @@ export function Projects() {
     <SimpleGrid flex="1" maxWidth={1120} w="100%" mx="auto" px="4" gap="1.625rem" minChildWidth="500px">
       { data && (
         data.map(data => (
-          <ProjectCard name={data.name} description={data.description} url={data.url} />
+          <ProjectCard name={data.name} description={data.description} html_url={data.html_url} />
         ))
       ) }
     </SimpleGrid>
