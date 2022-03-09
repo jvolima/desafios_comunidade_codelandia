@@ -1,4 +1,4 @@
-import { ChakraProvider, Heading, Text, Box } from "@chakra-ui/react"
+import { ChakraProvider, Heading, Text, Box, Flex, HStack } from "@chakra-ui/react"
 import { QueryClient, QueryClientProvider } from "react-query"
 import { ReactQueryDevtools } from "react-query/devtools"
 import { Header } from "./components/Header"
@@ -45,6 +45,46 @@ function App() {
         </Box>
 
         <Projects />
+
+        <Flex 
+          maxWidth={1120} 
+          w="100%" 
+          mx="auto"
+          mt="36" 
+          mb="12"
+          px="4"
+          as="footer" 
+          align="center" 
+          justify="space-between"
+        >
+          <Text
+            fontFamily="Josefin Sans"
+            fontWeight="bold"
+            fontSize="5xl"
+            lineHeight="3rem"
+            color="purple.500"
+          >
+            {`{ )`}
+          </Text>
+          <HStack spacing="12">
+            <Text
+              fontFamily="IBM Plex Mono"
+              fontSize="lg"
+              lineHeight="7"
+              color="gray.300"
+            >
+              © 2022 - João Vitor Lima
+            </Text>
+            <Text
+              fontFamily="IBM Plex Mono"
+              fontSize="lg"
+              lineHeight="7"
+              color="gray.300"
+            >
+              Codelândia
+            </Text>
+          </HStack>
+        </Flex>
       </ChakraProvider>
 
       <ReactQueryDevtools/>
